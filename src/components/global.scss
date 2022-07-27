@@ -1,0 +1,20 @@
+.content-container {
+	h1 {
+		font-size: xx-large;
+		font-weight: 700;
+	}
+	code,
+	code * {
+		font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+		font-weight: 400;
+		font-size: 1.8ch;
+	}
+
+	pre {
+		width: 95%;
+		font-size: small !important;
+		padding-block: 0.75rem !important;
+		padding-inline: 1rem !important;
+		border-radius: 3px;
+	}
+}
