@@ -37,7 +37,6 @@
 					<nav
 						class={'heading' + (selected[0] === i && isNaN(selected[1]) ? ' headingselected' : '')}
 						on:click|preventDefault={() => {
-							if (selected[0] === i && isNaN(selected[1])) return;
 							sessionStorage.setItem('selected', `${i},NaN`);
 							location.href = `/tutorial/${folder.foldername}`;
 						}}
@@ -64,7 +63,6 @@
 									class={'lesson' +
 										(selected[0] === i && selected[1] === j ? ' lessonselected' : '')}
 									on:click|preventDefault={() => {
-										if (selected[0] === i && selected[1] === j) return;
 										sessionStorage.setItem('selected', `${i},${j}`);
 										location.href = `/tutorial/${folder.foldername}/${lesson.file}`;
 									}}
