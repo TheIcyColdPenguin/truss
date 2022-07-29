@@ -12,8 +12,12 @@ export const GET: RequestHandler = async () => {
 	return { body: await getRouteDetails() };
 };
 
-const toTitleCase = (str: string) => {
-	const newStr = str.replace(/\..*$/, '').replace(/-/g, ' ');
+const toTitleCase = (str: string, isIndexFile?: boolean) => {
+	const newStr = str
+		.replace(/\..*$/, '')
+		.split('-')
+		.filter((_, i) => isIndexFile || i > 0)
+		.join(' ');
 	return newStr.charAt(0).toUpperCase() + newStr.slice(1);
 };
 
@@ -28,7 +32,7 @@ const getRouteDetails = async () => {
 
 		tutorials[i] = {
 			foldername: folder,
-			folderTitle: toTitleCase(folder),
+			folderTitle: toTitleCase(folder, true),
 			lessons: []
 		};
 

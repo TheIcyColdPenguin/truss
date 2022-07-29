@@ -1,10 +1,10 @@
-# Hello there
+# Welcome to Truss
 
-howdy do
-i'm gonna cry
+You'll be reading a ton of stuff you might not understand on the first read.<br />
+That's perfectly normal and you needn't worry about it.<br />
+It's nothing a little bit of practice won't fix.
 
-```js
-function hello() {
-	console.log('hello');
-}
-```
+Another thought to keep in mind is to always look stuff up. <br />
+Being able to find and utilise information provided on the web is one of the best skills one can have as a developer.
+
+Let's begin with setting up your development environment in the first chapter.
