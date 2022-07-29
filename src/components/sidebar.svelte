@@ -44,22 +44,24 @@
 						<span class="title">
 							{folder.folderTitle}
 						</span>
-						<span
-							on:click|stopPropagation|preventDefault={() => {
-								showing[i] = !showing[i];
-								sessionStorage.setItem('showing', JSON.stringify(showing));
-								showing = showing;
-							}}
-							class={'fold' + (showing[i] ? ' folded' : '')}
-						>
-							&#8963;
-						</span>
+						{#if folder.lessons.length}
+							<span
+								on:click|stopPropagation|preventDefault={() => {
+									showing[i] = !showing[i];
+									sessionStorage.setItem('showing', JSON.stringify(showing));
+									showing = showing;
+								}}
+								class={'fold' + (showing[i] ? ' folded' : '')}
+							>
+								&#8963;
+							</span>
+						{/if}
 					</nav>
 					{#if showing[i]}
 						<ul>
 							{#each folder.lessons as lesson, j}
 								<li
-									transition:fly={{ x: -50, delay: 50 * j }}
+									in:fly={{ x: -50, delay: 50 * j }}
 									class={'lesson' +
 										(selected[0] === i && selected[1] === j ? ' lessonselected' : '')}
 									on:click|preventDefault={() => {
